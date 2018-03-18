@@ -1,0 +1,8 @@
+{
+  "name": "tinder",
+  "app_id": "12dfa915",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
