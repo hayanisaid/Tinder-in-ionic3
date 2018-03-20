@@ -1,14 +1,140 @@
-<ion-header>
+
+<ion-header class="header">
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <ion-grid>
+  	<ion-row>
+  		<ion-col col-4>
+			<div menuToggle item-start class="avatar" >
+				<img src="../../assets/imgs/team-2.jpg" alt="image profile" (click)="chekPlatform">
+			</div>
+  		</ion-col>
+  		<ion-col col-6>	
+  	  <ion-title>
+  	   <h4> {{headrName}}</h4>
+  	  </ion-title>
+  		</ion-col>
+  		<ion-col col-2>
+  			<ion-icon name="calendar"></ion-icon>
+  		</ion-col>
+  	</ion-row>
+  </ion-grid>  
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+       <div class="main-content">
+       	 <ion-card>
+       	 			<img src="../../assets/imgs/team-2.jpg">
+       	 			<div class="description">
+       	 				<h1>Iman, 20</h1>
+       	 				<span>Student</span>
+       	 				<button icon-oncly item-end>
+       	 					 <ion-icon ios="ios-arrow-round-up" md="md-arrow-up"></ion-icon>
+       	 				</button>
+       	 			</div>
+       	 </ion-card>
+       	 <div class="controller">
+       	 	<ul class="list-unstyled">
+       	 		<li>
+               <ion-icon ios="ios-refresh" md="md-refresh"></ion-icon>
+             </li>
+             <li>
+             	  <ion-icon ios="ios-close" md="md-close"></ion-icon>
+             </li>
+             <li>
+             	<ion-icon ios="ios-star" md="md-star"></ion-icon>
+             </li>
+             <li>
+             	  <ion-icon ios="ios-heart" md="md-heart"></ion-icon>
+             </li>
+             <li>
+             	  <ion-icon ios="ios-flash" md="md-flash"></ion-icon>
+             </li>
+       	 	</ul>
+       	 </div>
+       </div>
+ </ion-content>
+<div class="menu">
+	<ion-menu ion-menu [content]="content">
+   <ion-header>
+   	<ion-toolbar>
+   	 <ion-grid>
+   	 	<ion-row>
+   	 		<ion-col col-2>
+   	 			<button menuClose icon-only>
+   	 				 <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+   	 			</button>
+   	 		</ion-col>
+   	 		<ion-col col-4>
+   	 			<img src="../../assets/imgs/team-2.jpg">
+   	 		</ion-col>
+   	 		<ion-col col-6>
+   	 			<h2 class="rlw">Profile</h2>
+   	 		</ion-col>
+   	 	</ion-row>
+   	 </ion-grid>
+   	</ion-toolbar>
+   </ion-header>
+   <ion-content>
+   <h4>discovry settings</h4>
+   	<ion-list>
+   		<li><a href="#" ion-item>
+   		    <ion-label>Maximum distance</ion-label>
+   				<ion-range range-right pin="true" min="-200" max="200" [(ngModel)]="distance">
+   					<ion-label range-right>{{distance}}</ion-label>
+   				</ion-range>
+   			
+   		</a></li>
+   		<li><a href="#" ion-item>
+   			<ion-label>Looking for {{gender}}</ion-label>
+   			<ion-select [(ngModel)]="gender">
+   				<ion-option>Women</ion-option>
+   				<ion-option>Men</ion-option>
+   				<ion-option>Men and Women</ion-option>
+   			</ion-select>
+   		</a></li>
+   		<li><a href="#" ion-item>
+   			<ion-label>Age range {{dualValue2.lower}} - {{dualValue2.upper}}</ion-label>
+			<ion-range dualKnobs="true" pin="true" [(ngModel)]="dualValue2" min="21" max="72" step="3" ></ion-range>
+   		</a></li>
+   		<li><a href="#" ion-item>
+   			<ion-label>Show Me on Tinder {{showme}}</ion-label>
+   			<ion-toggle [(ngModel)]="showme" value="true" checked="true"></ion-toggle>
+   		</a></li>
+   		<p>
+   		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+   		<h4>Notification</h4>
+   		<p>
+   		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+   		<li><a href="#" ion-item>
+   			<ion-label>New match</ion-label>
+   			<ion-toggle [(ngModel)]="match" value="true" checked="false"></ion-toggle>
+   		</a></li>
+   		<li><a href="#" ion-item>
+   			<ion-label>Messages</ion-label>
+   			<ion-toggle [(ngModel)]="messages" value="true" checked="false"></ion-toggle>
+   		</a></li>
+   		<li><a href="#" ion-item>
+   			<ion-label>Message Like</ion-label>
+   			<ion-toggle [(ngModel)]="like" value="true" checked="false"></ion-toggle>
+   		</a></li>
+   		<h4>Language</h4>
+   		<li><a href="#" ion-item>
+   		    <ion-label>{{lang}}</ion-label>
+   			<ion-select [(ngModel)]="lang">
+   				<ion-option value="English">English</ion-option>
+   				<ion-option value="Arabic">Arabic</ion-option>
+   				<ion-option value="French">French</ion-option>
+   				<ion-option value="Chines">Chines</ion-option>
+   				<ion-option value="Germany">Germany</ion-option>
+   			</ion-select>
+   		</a></li>
+   		<li><a href="#"  ion-item>Logout</a></li>
+   		<li><a href="#" menuClose ion-item>Close</a></li>
+   	</ion-list>
+   </ion-content>
+</ion-menu>
+<ion-nav #content [root]="rootPage"></ion-nav>
+</div>
+
+
